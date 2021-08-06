@@ -1,3 +1,5 @@
+import i18n from './config/i18n'
+
 export default {
   server: {
     host: '0.0.0.0',
@@ -57,7 +59,10 @@ export default {
     }
   },
   i18n: {
-    
+    strategy: 'no_prefix',
+    locales: ['en', 'es'],
+    defaultLocale: 'es',
+    vueI18n: i18n
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

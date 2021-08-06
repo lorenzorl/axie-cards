@@ -2,7 +2,7 @@
   <div class="app">
     <header class="header">
       <div class="header__title">
-        <h1>Axie Cards</h1>
+        <h1>{{ $t('title') }}</h1>
       </div>
     </header>
     <Nuxt />

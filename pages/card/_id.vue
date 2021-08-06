@@ -6,7 +6,7 @@
           <AxieCard :data="card" :widthSize="620"/>  
         </template>
         <template v-slot:header>
-          <h2>{{ card.partName }}</h2>
+          <h2>{{ card.skillName }}</h2>
         </template>
         <template v-slot:default>
           <div class="content-list">
@@ -15,8 +15,8 @@
                 <component :is="part" :type="type"></component>
               </div>
               <div class="content-list__description">
-                <b>Parte: </b>
-                <span>{{ capitalizeFirstLetter(part) }}</span>
+                <b>{{ $t('part') }}</b>
+                <span>{{ $t(`parts.${part}`) + ` - ${card.partName}`}}</span>
               </div>
             </div>
             <div class="content-list__item">
@@ -24,10 +24,10 @@
                 <img src="/icon-atk.png">
               </div>
               <div class="content-list__description">
-                <b>Ataque: </b>
+                <b>{{ $t('attack') }}</b>
                 <span>{{ card.defaultAttack }}</span>
-                <b>Tipo de Ataque: </b>
-                <span>{{ capitalizeFirstLetter(card.expectType) }}</span> 
+                <b>{{ $t('attackType') }}</b>
+                <span>{{ $t(`attackTypes.${card.expectType}`) }}</span> 
               </div>
             </div>
             <div class="content-list__item">
@@ -35,7 +35,7 @@
                 <img src="/icon-def.png">
               </div>
               <div class="content-list__description">
-                <b>Defensa: </b>
+                <b>{{ $t('defense') }}</b>
                 <span>{{ card.defaultDefense }}</span>                
               </div>
             </div>
@@ -44,7 +44,7 @@
                 <img src="https://storage.googleapis.com/axie-cdn/game/cards/effect-icons/gain-energy.png">
               </div>
               <div class="content-list__description">
-                <b>Energia: </b>
+                <b>{{ $t('energy') }}</b>
                 <span>{{ card.defaultEnergy }}</span>                
               </div>
             </div>
@@ -53,8 +53,8 @@
                 <img :src="`https://storage.googleapis.com/axie-cdn/game/cards/effect-icons/${card.iconId}.png`">
               </div>
               <div class="content-list__description">
-                <b>Descripcion: </b>
-                <span>{{ card.description }}</span>                
+                <b>{{ $t('description') }}</b>
+                <span>{{ $t(`cards.${card.id}.description`) }}</span>                
               </div>
             </div>
           </div>
