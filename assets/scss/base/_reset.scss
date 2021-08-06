@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+html {
+  font-family: Poppins;
+  font-size: 100%;
+}
+#__nuxt {
+  background: #2f2e3c;
+}
+#__nuxt, #__layout {
+  height: 100%;
+}

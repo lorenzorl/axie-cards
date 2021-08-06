@@ -1,0 +1,17 @@
+.axie-part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+
+  &__wrapper {
+    width: 25%;
+    flex-grow: 1;
+  }
+
+  svg {
+    width: auto;
+    height: auto;
+    max-width: 30px;
+  }
+}
