@@ -54,8 +54,28 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      name: 'Cartas de Axie Infinity',
+      author: 'lorenzorangel22@gmail.com',
+      description: 'Cartas de Axie Infinity en Español.',
+      theme_color: '#2f2e3c',
+      lang: 'es'
+    },
     manifest: {
-      lang: 'en'
+      name: 'Cartas de Axie Infinity',
+      short_name: 'Cartas Axie',
+      background_color: '#000000',
+      lang: 'es',
+    },
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://storage.googleapis.com/axie-cdn/game/cards/base/.*',
+          handler: 'cacheFirst',
+          method: 'GET',
+          strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
+        }
+      ]
     }
   },
   i18n: {
