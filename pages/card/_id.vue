@@ -68,10 +68,10 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  async asyncData({params}){
-    // console.log(params);
-    const id = params.id;
-    return { id }
+  data(){
+    return {
+      id: ''
+    }
   },
   computed: {
     card(){
@@ -90,7 +90,7 @@ export default {
     }
   },
   created(){
-    console.log(this.card);
+    this.id = this.$route.params.id;
   }
 }
 

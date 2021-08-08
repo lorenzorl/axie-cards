@@ -68,14 +68,48 @@ export default {
       lang: 'es',
     },
     workbox: {
+      // offlineStrategy: 'StaleWhileRevalidate',
+      preCaching: [
+        { url: '/aquatic-cards' },
+        { url: '/reptile-cards' },
+        { url: '/bug-cards' },
+        { url: '/plant-cards' },
+        { url: '/beast-cards' },
+        { url: '/bird-cards' }
+      ],
+      offlineAssets: [
+        '/bg-aquatic.png' ,
+        '/bg-beast.png' ,
+        '/bg-bug.png' ,
+        '/bg-bird.png' ,
+        '/bg-plant.png' ,
+        '/bg-reptile.png' ,
+        '/favicon.ico' ,
+        '/icon-atk.png' ,
+        '/icon-def.png' ,
+        '/icon.png'
+      ],
       runtimeCaching: [
         {
           urlPattern: 'https://storage.googleapis.com/axie-cdn/game/cards/base/.*',
-          handler: 'cacheFirst',
+          handler: 'CacheFirst',
+          method: 'GET',
+          strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
+        },
+        {
+          urlPattern: 'https://storage.googleapis.com/axie-cdn/game/cards/effect-icons/.*',
+          handler: 'CacheFirst',
+          method: 'GET',
+          strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
+        },
+        {
+          urlPattern: '/.*-cards',
+          handler: 'CacheFirst',
           method: 'GET',
           strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
         }
-      ]
+      ],
+      offlineStrategy: 'CacheFirst'
     }
   },
   i18n: {
