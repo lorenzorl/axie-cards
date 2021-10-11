@@ -1,5 +1,14 @@
 .footer {
   width: 100%;
   text-align: center;
-  padding: 5px;
+  padding: 8px;
+  font-size: 0.9rem;
+
+  a {
+    background: #2196f3;
+    text-decoration: none;
+    padding: 1px 5px;
+    border-radius: 7px;
+    color: #ffffff;
+  }
 }

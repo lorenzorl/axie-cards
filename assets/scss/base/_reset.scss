@@ -15,3 +15,15 @@ html {
 #__nuxt, #__layout {
   height: 100%;
 }
+
+html {
+  @include phone {
+    font-size: 16px;
+  }
+  @include tablet {
+    font-size: 18px;
+  }
+  @include desktop {
+    font-size: 20px;
+  }
+}

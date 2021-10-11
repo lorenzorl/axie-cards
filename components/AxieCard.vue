@@ -58,7 +58,7 @@
       </svg>
     </div>
     <div class="axie-card__description" :class="{'loading-base' : this.loadingBase}">
-      <img loading="lazy" :src="`https://storage.googleapis.com/axie-cdn/game/cards/effect-icons/${this.data.iconId}.png`">
+      <img crossorigin="anonymuos" loading="lazy" :src="`https://storage.googleapis.com/axie-cdn/game/cards/effect-icons/${this.data.iconId}.png`">
          <AjustedText :text="this.data.description" />
       </svg>
     </div>

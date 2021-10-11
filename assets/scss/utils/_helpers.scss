@@ -12,10 +12,14 @@
   &::webkit-scrollbar {
     display: none;
   }
+
 }
 
 .align-content-center {
-  align-content: center;
+  align-content: initial;
+  @include phone {
+    align-content: center;
+  }
 }
 
 .padding-10-0 {

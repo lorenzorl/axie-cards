@@ -56,7 +56,10 @@
   &--axie-type {
     max-width: 300px;
     max-height: 220px;
-    width: 50%;
+    width: 100%;
     height: calc(100% / 3);
+    @include phone {
+      width: 50%;
+    }
   }
 }

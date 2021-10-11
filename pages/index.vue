@@ -6,7 +6,8 @@
           <template v-slot:default>
             <NuxtLink 
               class="link" 
-              :to="{ name : `${type}-cards`, params: { type: type} }"
+              :to="`${type}-cards`"
+              @click.native="updateFilters(type, 'all')"
             >
               <component :is="`${type}-type`"></component>
             </NuxtLink>
@@ -15,7 +16,8 @@
             <NuxtLink 
               v-for="part in parts"
               :key="part"
-              :to="{ path : `/${type}-cards`, query : { part : part }}"
+              :to="`/${type}-cards`"
+              @click.native="updateFilters(type, part)"
               class="axie-part__wrapper"
             >
               <component :is="part" :type="type" />
@@ -51,11 +53,14 @@ export default {
       cards: {}
     }
   },
+  methods: {
+    updateFilters(typea = 'all', part = 'all'){
+      this.$store.dispatch('cards/filterType', typea);
+      this.$store.dispatch('cards/filterPart', part);
+    }
+  },
   computed:{
     ...mapGetters(['cards/getAll'])
-  },
-  mounted(){
-    console.log(this);
   }
 }
 </script>

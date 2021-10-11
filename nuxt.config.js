@@ -1,3 +1,4 @@
+import cards from './data/cards'
 import i18n from './config/i18n'
 
 export default {
@@ -54,6 +55,9 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {
+      fileName: 'icon.png'
+    },
     meta: {
       name: 'Cartas de Axie Infinity',
       author: 'lorenzorangel22@gmail.com',
@@ -64,19 +68,11 @@ export default {
     manifest: {
       name: 'Cartas de Axie Infinity',
       short_name: 'Cartas Axie',
-      background_color: '#000000',
+      description: 'Cartas de Axie Infinity en Español.',
+      background_color: '#2f2e3c',
       lang: 'es',
     },
     workbox: {
-      // offlineStrategy: 'StaleWhileRevalidate',
-      preCaching: [
-        { url: '/aquatic-cards' },
-        { url: '/reptile-cards' },
-        { url: '/bug-cards' },
-        { url: '/plant-cards' },
-        { url: '/beast-cards' },
-        { url: '/bird-cards' }
-      ],
       offlineAssets: [
         '/bg-aquatic.png' ,
         '/bg-beast.png' ,
@@ -87,7 +83,9 @@ export default {
         '/favicon.ico' ,
         '/icon-atk.png' ,
         '/icon-def.png' ,
-        '/icon.png'
+        '/icon.png',
+        '/_nuxt/fonts/ChangaOne-Regular.78c9d6c.ttf',
+        '/_nuxt/fonts/Poppins-Regular.8081832.ttf'
       ],
       runtimeCaching: [
         {
@@ -101,15 +99,8 @@ export default {
           handler: 'CacheFirst',
           method: 'GET',
           strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
-        },
-        {
-          urlPattern: '/.*-cards',
-          handler: 'CacheFirst',
-          method: 'GET',
-          strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
         }
-      ],
-      offlineStrategy: 'CacheFirst'
+      ]
     }
   },
   i18n: {
