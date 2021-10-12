@@ -1,6 +1,5 @@
 <template>
   <img 
-    crossorigin="anonymuos" 
     loading="lazy"
     :src="src" 
     @load="$emit('loaded-image')"
