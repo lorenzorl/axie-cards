@@ -66,8 +66,12 @@
 </template>
 <script>
 
+import ImgLazyLoading from '@/components/ImgLazyLoading'
+import AjustedText from '@/components/AjustedText'
+
 export default {
   name: 'AxieCard',
+  components: { ImgLazyLoading, AjustedText },
   data(){
     return {
       loadingBase: true,
